@@ -24,7 +24,7 @@ export const Hero = () => {
           <div className="space-y-8 animate-fade-in">
             <div className="space-y-6">
               <p className="text-xl text-foreground/80 animate-slide-up">Hello, we are</p>
-              <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold text-foreground leading-tight animate-slide-up" style={{ animationDelay: '0.1s' }}>
+              <h1 className="text-6xl md:text-7xl lg:text-8xl font-heading font-bold text-foreground leading-tight animate-slide-up" style={{ animationDelay: '0.1s' }}>
                 Aroon Zafar &
                 <br />
                 Kamran Aslam
