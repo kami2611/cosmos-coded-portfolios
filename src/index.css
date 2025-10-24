@@ -64,6 +64,26 @@ All colors MUST be HSL.
   .glow-effect {
     filter: drop-shadow(var(--glow-primary));
   }
+
+  .glow-circle {
+    box-shadow: 0 0 60px hsl(var(--primary) / 0.3),
+                0 0 120px hsl(var(--primary) / 0.2),
+                inset 0 0 60px hsl(var(--primary) / 0.1);
+    animation: pulse-glow 3s ease-in-out infinite;
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: 0 0 60px hsl(var(--primary) / 0.3),
+                  0 0 120px hsl(var(--primary) / 0.2),
+                  inset 0 0 60px hsl(var(--primary) / 0.1);
+    }
+    50% {
+      box-shadow: 0 0 80px hsl(var(--primary) / 0.4),
+                  0 0 160px hsl(var(--primary) / 0.3),
+                  inset 0 0 80px hsl(var(--primary) / 0.15);
+    }
+  }
 }
 
 @layer utilities {
