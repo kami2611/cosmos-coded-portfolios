@@ -31,7 +31,7 @@ export const Footer = () => {
               <Linkedin size={20} />
             </a>
             <a
-              href="mailto:hppavilion120000@gmail.com"
+              href="mailto:novaenterprisescontact@gmail.com"
               className="text-muted-foreground hover:text-primary transition-colors duration-200"
               aria-label="Email"
             >

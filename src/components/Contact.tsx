@@ -46,8 +46,8 @@ export const Contact = () => {
     {
       icon: Mail,
       title: 'Email',
-      value: 'hppavilion120000@gmail.com',
-      link: 'mailto:hppavilion120000@gmail.com',
+      value: 'novaenterprisescontact@gmail.com',
+      link: 'mailto:novaenterprisescontact@gmail.com',
     },
     {
       icon: Phone,
@@ -67,7 +67,7 @@ export const Contact = () => {
     <section id="contact" className="py-20">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-4">Get In Touch</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">Get In Touch</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Have a project in mind? Let's work together to bring your ideas to life
           </p>
