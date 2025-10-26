@@ -13,7 +13,7 @@ export const Footer = () => {
 
           <div className="flex items-center gap-6">
             <a
-              href="https://github.com"
+              href="https://github.com/kami2611"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-primary transition-colors duration-200"
@@ -22,7 +22,7 @@ export const Footer = () => {
               <Github size={20} />
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://pk.linkedin.com/in/muhammad-kamran-61796836a"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-primary transition-colors duration-200"
@@ -31,16 +31,7 @@ export const Footer = () => {
               <Linkedin size={20} />
             </a>
             <a
-              href="https://twitter.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary transition-colors duration-200"
-              aria-label="Twitter"
-            >
-              <Twitter size={20} />
-            </a>
-            <a
-              href="mailto:contact@portfolio.com"
+              href="mailto:hppavilion120000@gmail.com"
               className="text-muted-foreground hover:text-primary transition-colors duration-200"
               aria-label="Email"
             >

@@ -4,7 +4,7 @@ import { StarryBackground } from './StarryBackground';
 import { useTypewriter } from '@/hooks/useTypewriter';
 
 export const Hero = () => {
-  const roles = ['Vibe Coders', 'Web Developers', 'Entrepreneurs', 'App Developers', 'Marketers'];
+  const roles = ['Web Developers', 'Entrepreneurs', 'App Developers', 'Marketers', 'Vibe Coders'];
   const currentRole = useTypewriter(roles, 100, 50, 2000);
 
   const scrollToSection = (sectionId: string) => {
@@ -17,18 +17,28 @@ export const Hero = () => {
   return (
     <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
       <StarryBackground />
-      
+
       <div className="relative z-10 container mx-auto px-6 lg:px-12 py-20">
         <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
           {/* Left side - Content */}
           <div className="space-y-8 animate-fade-in">
             <div className="space-y-6">
-              <p className="text-xl text-foreground/80 animate-slide-up">Hello, we are</p>
-              <h1 className="text-6xl md:text-7xl lg:text-8xl font-heading font-bold text-foreground leading-tight animate-slide-up" style={{ animationDelay: '0.1s' }}>
-                Aroon Zafar &
-                <br />
-                Kamran Aslam
-              </h1>
+              {/* Updated: 'Hello, we are' is now a styled badge placed above and aligned with the headline */}
+              <div className="relative">
+                <div className="absolute -top-6 md:-top-8 left-0">
+                  <span className="inline-flex items-center gap-3 bg-foreground/6 text-foreground/80 px-3 py-1 rounded-full text-sm uppercase tracking-widest font-medium shadow-sm animate-slide-up" style={{ animationDelay: '0s' }}>
+                    <span className="w-2 h-2 rounded-full bg-gradient-to-r from-primary to-accent inline-block" />
+                    Hello, we are
+                  </span>
+                </div>
+
+                <h1 className="text-6xl md:text-7xl lg:text-8xl font-heading font-bold text-foreground leading-tight mt-8 md:mt-10 animate-slide-up" style={{ animationDelay: '0.1s' }}>
+                  Aroon &amp;
+                  <br />
+                  Kamran
+                </h1>
+              </div>
+
               <div className="text-2xl md:text-3xl text-foreground/90 animate-slide-up" style={{ animationDelay: '0.2s' }}>
                 <span>We are </span>
                 <span className="gradient-text font-semibold">
@@ -39,7 +49,7 @@ export const Hero = () => {
             </div>
 
             <p className="text-lg text-muted-foreground max-w-xl animate-slide-up" style={{ animationDelay: '0.3s' }}>
-              Building beautiful mobile apps and full-stack web solutions. 
+              Building beautiful mobile apps and full-stack web solutions.
               From cross-platform Flutter applications to scalable MERN architectures.
             </p>
 
@@ -63,7 +73,7 @@ export const Hero = () => {
 
             <div className="flex items-center gap-6 animate-slide-up" style={{ animationDelay: '0.5s' }}>
               <a
-                href="https://github.com"
+                href="https://github.com/kami2611"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-foreground/60 hover:text-primary transition-colors duration-200"
@@ -72,7 +82,7 @@ export const Hero = () => {
                 <Github size={28} />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://pk.linkedin.com/in/muhammad-kamran-61796836a"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-foreground/60 hover:text-primary transition-colors duration-200"
@@ -81,16 +91,7 @@ export const Hero = () => {
                 <Linkedin size={28} />
               </a>
               <a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-foreground/60 hover:text-primary transition-colors duration-200"
-                aria-label="Twitter"
-              >
-                <Twitter size={28} />
-              </a>
-              <a
-                href="mailto:contact@portfolio.com"
+                href="mailto:hppavilion120000@gmail.com"
                 className="text-foreground/60 hover:text-primary transition-colors duration-200"
                 aria-label="Email"
               >
