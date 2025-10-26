@@ -12,22 +12,34 @@ export const Contact = () => {
     email: '',
     message: '',
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setIsSubmitting(true);
 
-    const form = e.target;
-    const data = new FormData(form);
+    const formElement = e.target as HTMLFormElement;
+    const data = new FormData(formElement);
 
-    fetch("/", {
-      method: "POST",
-      body: data,
-    })
-      .then(() => {
+    try {
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(data as any).toString(),
+      });
+
+      if (response.ok) {
         toast.success("Message sent! We'll get back to you soon.");
         setFormData({ name: '', email: '', message: '' });
-      })
-      .catch((error) => alert(error));
+      } else {
+        throw new Error('Form submission failed');
+      }
+    } catch (error) {
+      toast.error('Failed to send message. Please try again.');
+      console.error('Form submission error:', error);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactInfo = [
@@ -35,7 +47,7 @@ export const Contact = () => {
       icon: Mail,
       title: 'Email',
       value: 'hppavilion120000@gmail.com',
-      link: 'mailto:contact@portfolio.com',
+      link: 'mailto:hppavilion120000@gmail.com',
     },
     {
       icon: Phone,
@@ -55,7 +67,7 @@ export const Contact = () => {
     <section id="contact" className="py-20">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">Get In Touch</h2>
+          <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-4">Get In Touch</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Have a project in mind? Let's work together to bring your ideas to life
           </p>
@@ -108,7 +120,6 @@ export const Contact = () => {
               onSubmit={handleSubmit}
               className="space-y-6"
             >
-              {/* Hidden input required for Netlify */}
               <input type="hidden" name="form-name" value="contact" />
 
               <div>
@@ -162,8 +173,9 @@ export const Contact = () => {
                 type="submit"
                 className="w-full bg-primary text-primary-foreground hover:bg-primary/90 glow-effect"
                 size="lg"
+                disabled={isSubmitting}
               >
-                Send Message
+                {isSubmitting ? 'Sending...' : 'Send Message'}
               </Button>
             </form>
           </Card>
