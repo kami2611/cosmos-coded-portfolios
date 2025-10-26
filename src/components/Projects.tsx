@@ -46,7 +46,7 @@ export const Projects = () => {
     <section id="projects" className="py-20 bg-card/30">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-4">Featured Projects</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">Featured Projects</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             A showcase of our recent work in mobile and web development
           </p>

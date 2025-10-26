@@ -13,10 +13,21 @@ export const Contact = () => {
     message: '',
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    toast.success('Message sent! We\'ll get back to you soon.');
-    setFormData({ name: '', email: '', message: '' });
+
+    const form = e.target;
+    const data = new FormData(form);
+
+    fetch("/", {
+      method: "POST",
+      body: data,
+    })
+      .then(() => {
+        toast.success("Message sent! We'll get back to you soon.");
+        setFormData({ name: '', email: '', message: '' });
+      })
+      .catch((error) => alert(error));
   };
 
   const contactInfo = [
@@ -44,7 +55,7 @@ export const Contact = () => {
     <section id="contact" className="py-20">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-4">Get In Touch</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">Get In Touch</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Have a project in mind? Let's work together to bring your ideas to life
           </p>
@@ -90,13 +101,23 @@ export const Contact = () => {
           </div>
 
           <Card className="p-8 bg-card border-border">
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form
+              name="contact"
+              method="POST"
+              data-netlify="true"
+              onSubmit={handleSubmit}
+              className="space-y-6"
+            >
+              {/* Hidden input required for Netlify */}
+              <input type="hidden" name="form-name" value="contact" />
+
               <div>
                 <label htmlFor="name" className="block text-sm font-medium mb-2">
                   Your Name
                 </label>
                 <Input
                   id="name"
+                  name="name"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   placeholder="John Doe"
@@ -111,6 +132,7 @@ export const Contact = () => {
                 </label>
                 <Input
                   id="email"
+                  name="email"
                   type="email"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -126,6 +148,7 @@ export const Contact = () => {
                 </label>
                 <Textarea
                   id="message"
+                  name="message"
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   placeholder="Tell us about your project..."

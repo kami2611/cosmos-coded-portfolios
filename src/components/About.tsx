@@ -23,7 +23,7 @@ export const About = () => {
     <section id="about" className="py-20 bg-card/30">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-4">About Us</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">About Us</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Two developers, one vision: crafting exceptional digital experiences
           </p>
