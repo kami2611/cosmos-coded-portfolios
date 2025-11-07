@@ -38,7 +38,7 @@ export const Navigation = () => {
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <a href="#home" className="text-2xl font-bold gradient-text" onClick={(e) => scrollToSection(e, '#home')}>
-            Nova EnterPrises
+            NovaNest EnterPrises
           </a>
 
           {/* Desktop Navigation */}

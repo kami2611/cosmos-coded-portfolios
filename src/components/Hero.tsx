@@ -33,9 +33,9 @@ export const Hero = () => {
                 </div>
 
                 <h1 className="text-6xl md:text-7xl lg:text-8xl font-heading font-bold text-foreground leading-tight mt-8 md:mt-10 animate-slide-up" style={{ animationDelay: '0.1s' }}>
-                  Aroon &amp;
+                  NovaNest
                   <br />
-                  Kamran
+                  EnterPrises
                 </h1>
               </div>
 
