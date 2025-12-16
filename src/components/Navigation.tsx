@@ -15,6 +15,7 @@ export const Navigation = () => {
 
   const navLinks = [
     { href: '#home', label: 'Home' },
+    { href: '#services', label: 'Services' },
     { href: '#about', label: 'About' },
     { href: '#skills', label: 'Skills' },
     { href: '#projects', label: 'Projects' },
@@ -48,9 +49,10 @@ export const Navigation = () => {
                 key={link.href}
                 href={link.href}
                 onClick={(e) => scrollToSection(e, link.href)}
-                className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors duration-200"
+                className="relative text-sm font-medium text-muted-foreground hover:text-primary transition-colors duration-300 group"
               >
                 {link.label}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-accent group-hover:w-full transition-all duration-300" />
               </a>
             ))}
           </div>

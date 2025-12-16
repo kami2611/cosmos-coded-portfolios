@@ -1,6 +1,62 @@
+import { useState, useEffect, useRef } from 'react';
 import { Card } from '@/components/ui/card';
 
+interface SkillBarProps {
+  name: string;
+  level: number;
+  isVisible: boolean;
+  delay: number;
+}
+
+const SkillBar = ({ name, level, isVisible, delay }: SkillBarProps) => {
+  const [width, setWidth] = useState(0);
+
+  useEffect(() => {
+    if (isVisible) {
+      const timeout = setTimeout(() => {
+        setWidth(level);
+      }, delay);
+      return () => clearTimeout(timeout);
+    }
+  }, [isVisible, level, delay]);
+
+  return (
+    <div>
+      <div className="flex justify-between mb-2">
+        <span className="text-sm font-medium">{name}</span>
+        <span className="text-sm text-muted-foreground">{level}%</span>
+      </div>
+      <div className="h-2 bg-secondary rounded-full overflow-hidden">
+        <div
+          className="h-full bg-gradient-to-r from-primary to-accent rounded-full transition-all duration-1000 ease-out"
+          style={{ width: `${width}%` }}
+        />
+      </div>
+    </div>
+  );
+};
+
 export const Skills = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   const skillCategories = [
     {
       title: 'Flutter & Mobile',
@@ -38,11 +94,22 @@ export const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="py-20">
-      <div className="container mx-auto px-6">
+    <section id="skills" ref={sectionRef} className="py-20 relative overflow-hidden">
+      {/* Background decorations */}
+      <div className="absolute inset-0">
+        <div className="absolute top-20 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 left-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
+      </div>
+
+      <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">Skills & Expertise</h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <span className={`inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+            Our Expertise
+          </span>
+          <h2 className={`text-4xl md:text-5xl font-bold mb-4 text-white transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+            Skills & <span className="gradient-text">Expertise</span>
+          </h2>
+          <p className={`text-lg text-muted-foreground max-w-2xl mx-auto transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
             Our technical toolkit for building modern applications
           </p>
         </div>
@@ -51,27 +118,19 @@ export const Skills = () => {
           {skillCategories.map((category, categoryIndex) => (
             <Card
               key={category.title}
-              className="p-6 bg-card border-border hover:border-primary/50 transition-all duration-300"
-              style={{ animationDelay: `${categoryIndex * 0.1}s` }}
+              className={`p-6 bg-card border-border hover:border-primary/50 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10 hover:-translate-y-2 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+              style={{ transitionDelay: `${categoryIndex * 150}ms` }}
             >
               <h3 className="text-xl font-bold mb-6 text-primary">{category.title}</h3>
               <div className="space-y-4">
-                {category.skills.map((skill) => (
-                  <div key={skill.name}>
-                    <div className="flex justify-between mb-2">
-                      <span className="text-sm font-medium">{skill.name}</span>
-                      <span className="text-sm text-muted-foreground">{skill.level}%</span>
-                    </div>
-                    <div className="h-2 bg-secondary rounded-full overflow-hidden">
-                      <div
-                        className="h-full bg-gradient-to-r from-primary to-primary/60 rounded-full transition-all duration-1000 ease-out"
-                        style={{
-                          width: `${skill.level}%`,
-                          animationDelay: `${categoryIndex * 0.1 + 0.2}s`,
-                        }}
-                      />
-                    </div>
-                  </div>
+                {category.skills.map((skill, skillIndex) => (
+                  <SkillBar
+                    key={skill.name}
+                    name={skill.name}
+                    level={skill.level}
+                    isVisible={isVisible}
+                    delay={categoryIndex * 150 + skillIndex * 100 + 300}
+                  />
                 ))}
               </div>
             </Card>

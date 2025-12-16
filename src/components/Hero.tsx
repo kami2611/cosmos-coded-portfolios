@@ -56,7 +56,7 @@ export const Hero = () => {
             <div className="flex flex-wrap items-center gap-4 animate-slide-up" style={{ animationDelay: '0.4s' }}>
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-primary to-accent text-primary-foreground hover:opacity-90 glow-effect rounded-full px-8"
+                className="bg-gradient-to-r from-primary to-accent text-primary-foreground hover:opacity-90 hover:scale-105 glow-effect rounded-full px-8 transition-all duration-300"
                 onClick={() => scrollToSection('#projects')}
               >
                 View Projects
@@ -64,7 +64,7 @@ export const Hero = () => {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-foreground/20 hover:bg-foreground/5 rounded-full px-8"
+                className="border-primary/50 text-foreground bg-transparent hover:bg-primary/20 hover:border-primary hover:text-white rounded-full px-8 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/20"
                 onClick={() => scrollToSection('#contact')}
               >
                 Get in touch
@@ -76,7 +76,7 @@ export const Hero = () => {
                 href="https://github.com/kami2611"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-foreground/60 hover:text-primary transition-colors duration-200"
+                className="text-foreground/60 hover:text-primary transition-all duration-300 hover:scale-125 hover:-translate-y-1"
                 aria-label="GitHub"
               >
                 <Github size={28} />
@@ -85,14 +85,14 @@ export const Hero = () => {
                 href="https://pk.linkedin.com/in/muhammad-kamran-61796836a"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-foreground/60 hover:text-primary transition-colors duration-200"
+                className="text-foreground/60 hover:text-primary transition-all duration-300 hover:scale-125 hover:-translate-y-1"
                 aria-label="LinkedIn"
               >
                 <Linkedin size={28} />
               </a>
               <a
                 href="mailto:novaenterprisescontact@gmail.com"
-                className="text-foreground/60 hover:text-primary transition-colors duration-200"
+                className="text-foreground/60 hover:text-primary transition-all duration-300 hover:scale-125 hover:-translate-y-1"
                 aria-label="Email"
               >
                 <Mail size={28} />
@@ -102,9 +102,13 @@ export const Hero = () => {
 
           {/* Right side - Glowing Circle */}
           <div className="hidden lg:flex items-center justify-center animate-fade-in" style={{ animationDelay: '0.3s' }}>
-            <div className="relative">
+            <div className="relative animate-float">
               <div className="w-[500px] h-[500px] rounded-full border-2 border-primary/30 glow-circle" />
               <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary/5 to-transparent" />
+              {/* Inner rotating ring */}
+              <div className="absolute inset-8 rounded-full border border-dashed border-primary/20 animate-spin-slow" />
+              {/* Center glow */}
+              <div className="absolute inset-20 rounded-full bg-gradient-to-br from-primary/10 to-accent/10 blur-2xl" />
             </div>
           </div>
         </div>
