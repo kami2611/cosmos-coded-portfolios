@@ -88,8 +88,9 @@ export const Projects = () => {
           {projects.map((project, index) => (
             <Card
               key={project.title}
-              className={`p-6 bg-card border-border hover:border-primary/50 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10 group overflow-hidden hover:-translate-y-2 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+              className={`p-6 bg-card border-border hover:border-primary/50 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10 group overflow-hidden hover:-translate-y-2 cursor-pointer ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
               style={{ transitionDelay: `${index * 150}ms` }}
+              onClick={() => window.open(project.demo, '_blank')}
             >
               {/* Project Image */}
               <div className="mb-4 overflow-hidden rounded-lg">
