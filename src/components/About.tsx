@@ -106,39 +106,7 @@ const TeamMemberCard = ({ name, role, description, expertise, icon: Icon, social
         </div>
 
         {/* Social links */}
-        <div className="relative z-10 flex justify-center gap-4">
-          {socials.linkedin && (
-            <a
-              href={socials.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2 rounded-full bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110"
-              aria-label={`${name}'s LinkedIn`}
-            >
-              <Linkedin size={18} />
-            </a>
-          )}
-          {socials.twitter && (
-            <a
-              href={socials.twitter}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2 rounded-full bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110"
-              aria-label={`${name}'s Twitter`}
-            >
-              <Twitter size={18} />
-            </a>
-          )}
-          {socials.email && (
-            <a
-              href={`mailto:${socials.email}`}
-              className="p-2 rounded-full bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110"
-              aria-label={`Email ${name}`}
-            >
-              <Mail size={18} />
-            </a>
-          )}
-        </div>
+
       </Card>
     </div>
   );

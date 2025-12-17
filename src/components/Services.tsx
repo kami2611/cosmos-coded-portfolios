@@ -91,15 +91,6 @@ const ServiceCard = ({ title, description, icon: Icon, features, index, gradient
         </ul>
         
         {/* CTA */}
-        <div className="relative z-10 mt-auto">
-          <Button 
-            variant="ghost" 
-            className="p-0 h-auto text-primary hover:text-primary/80 group/btn"
-          >
-            Learn More 
-            <ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform duration-300" />
-          </Button>
-        </div>
       </Card>
     </div>
   );
