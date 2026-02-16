@@ -54,7 +54,7 @@ export const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">Get in Touch</h4>
             <p className="text-muted-foreground text-sm mb-4">
-              novaenterprisescontact@gmail.com
+              kamranmemories26@gmail.com
             </p>
             <div className="flex items-center gap-4">
               <a
@@ -76,7 +76,7 @@ export const Footer = () => {
                 <Linkedin size={18} />
               </a>
               <a
-                href="mailto:novaenterprisescontact@gmail.com"
+                href="mailto:kamranmemories26@gmail.com"
                 className="p-2 rounded-full bg-primary/10 text-muted-foreground hover:text-primary hover:bg-primary/20 transition-all duration-300 hover:scale-110"
                 aria-label="Email"
               >
