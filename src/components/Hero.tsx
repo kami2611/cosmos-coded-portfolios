@@ -91,7 +91,7 @@ export const Hero = () => {
                 <Linkedin size={28} />
               </a>
               <a
-                href="mailto:novaenterprisescontact@gmail.com"
+                href="mailto:kamranmemories26@gmail.com"
                 className="text-foreground/60 hover:text-primary transition-all duration-300 hover:scale-125 hover:-translate-y-1"
                 aria-label="Email"
               >

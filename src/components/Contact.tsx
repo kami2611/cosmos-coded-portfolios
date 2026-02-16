@@ -65,14 +65,14 @@ export const Contact = () => {
     {
       icon: Mail,
       title: 'Email',
-      value: 'novaenterprisescontact@gmail.com',
-      link: 'mailto:novaenterprisescontact@gmail.com',
+      value: 'kamranmemories26@gmail.com',
+      link: 'mailto:kamranmemories26@gmail.com',
     },
     {
       icon: Phone,
       title: 'Phone',
-      value: '+92 (306) 5896726',
-      link: 'tel:+923065896726',
+      value: '+92 (328) 6036131',
+      link: 'tel:+923286036131',
     },
     {
       icon: MapPin,
