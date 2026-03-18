@@ -122,7 +122,7 @@ export const About = () => {
       expertise: ['MERN Stack', 'Web Architecture', 'Cloud Solutions'],
       socials: {
         linkedin: 'https://pk.linkedin.com/in/muhammad-kamran-61796836a',
-        email: 'kamranmemories26@gmail.com',
+        email: 'novanestenterprise@gmail.com',
       },
     },
     {
@@ -133,7 +133,7 @@ export const About = () => {
       expertise: ['Flutter/Dart', 'Mobile UI/UX', 'App Strategy'],
       socials: {
         linkedin: '#',
-        email: 'kamranmemories26@gmail.com',
+        email: 'novanestenterprise@gmail.com',
       },
     },
     {
@@ -155,7 +155,7 @@ export const About = () => {
       expertise: ['Digital Marketing', 'SEO/SEM', 'Growth Hacking'],
       socials: {
         linkedin: '#',
-        email: 'kamranmemories26@gmail.com',
+        email: 'novanestenterprise@gmail.com',
       },
     },
     {
@@ -177,7 +177,7 @@ export const About = () => {
       expertise: ['Agile/Scrum', 'Client Relations', 'Team Leadership'],
       socials: {
         linkedin: '#',
-        email: 'kamranmemories26@gmail.com',
+        email: 'novanestenterprise@gmail.com',
       },
     },
   ];
