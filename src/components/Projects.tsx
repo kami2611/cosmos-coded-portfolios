@@ -61,6 +61,33 @@ export const Projects = () => {
       type: 'MERN',
       image: '/projects/zeracreative.png',
     },
+    {
+      title: 'Empower Gym',
+      description: 'EMPOWER YOUR FITNESS JOURNEY — Join a vibrant community of women runners and fitness enthusiasts. Classes, 1-on-1 training, and run routes designed for you in Brixton.',
+      tags: ['React', 'Tailwind CSS', 'Vercel'],
+      github: 'https://github.com/kami2611',
+      demo: 'https://em-power-gym.vercel.app/',
+      type: 'React',
+      image: '/projects/gymweb.png',
+    },
+    {
+      title: 'K Aesthetic',
+      description: 'Malaysian Certified Aesthetician | Beauty Clinic & Spa — Enhancing natural beauty with advanced aesthetic care.',
+      tags: ['React', 'Tailwind CSS', 'Vercel'],
+      github: 'https://github.com/kami2611',
+      demo: 'https://k-aesthetic.vercel.app/',
+      type: 'React',
+      image: '/projects/beautyweb.png',
+    },
+    {
+      title: 'Inno Bricks',
+      description: 'Shop the exclusive deals about art and craft items only on Inno Bricks. Low cost with quality items.',
+      tags: ['Shopify', 'Liquid', 'E-Commerce'],
+      github: 'https://github.com/kami2611',
+      demo: 'https://innobricks.co.uk/',
+      type: 'Shopify',
+      image: '/projects/ecomminno.png',
+    },
   ];
 
   return (
